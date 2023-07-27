@@ -22,8 +22,11 @@ This project contains tasks for learning to use classes in ECMAScript 2015 (ES6)
 
 in your project directory:
 
+
 Install Jest using: ```npm install --save-dev jest```
+
 Install Babel using: ```npm install --save-dev babel-jest @babel/core @babel/preset-env```
+
 Install ESLint using: ```npm install --save-dev eslint```
 
 **Configuration files**
