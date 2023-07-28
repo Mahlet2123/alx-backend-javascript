@@ -2,10 +2,10 @@
  * Represents a class named HolbertonCourse
  */
 export default class HolbertonCourse {
-  constructor(name, length, students) {
-    this._name = '';
-    this._length = 0;
-    this._students = [];
+  constructor(name = '', length = 0, students = []) {
+    this._name = name;
+    this._length = length;
+    this._students = students;
   }
 
   set name(value) {
@@ -26,7 +26,7 @@ export default class HolbertonCourse {
     if (typeof value !== 'object') {
       throw new TypeError('Students must be an array of strings');
     }
-    
+
     if (value.some((item) => typeof item !== 'string')) {
       throw new Error('Students must be an array of strings');
     }
