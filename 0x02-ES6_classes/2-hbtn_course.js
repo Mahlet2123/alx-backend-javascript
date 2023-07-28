@@ -22,17 +22,20 @@ export default class HolbertonCourse {
     this._length = value;
   }
 
-  set students(value) {
-    if (typeof value !== 'object') {
+  set students(currStudents) {
+    if (typeof currStudents === 'object') {
+      for (const student in currStudents) {
+        if (typeof student !== 'string') {
+          throw new TypeError('Students must be an array of strings');
+        }
+      }
+    } else {
       throw new TypeError('Students must be an array of strings');
     }
-
-    if (value.some((item) => typeof item !== 'string')) {
-      throw new Error('Students must be an array of strings');
-    }
-    this._students = value;
+    this._students = currStudents;
   }
 
+  
   get name() {
     return this._name;
   }
