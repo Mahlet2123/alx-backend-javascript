@@ -1,9 +1,9 @@
 import Currency from './3-currency';
 
 export default class Pricing {
-  constructor(amount = '', currency) {
-    this.amount = amount;
-    this.currency = currency;
+  constructor(amount = 0, currency) {
+    this._amount = amount;
+    this._currency = currency;
   }
 
   set amount(value) {
@@ -34,11 +34,11 @@ export default class Pricing {
 
   static convertPrice(amount = 0, conversionRate = 0) {
     if (typeof amount !== 'number') {
-      throw new TypeError('amount must be a string');
+      throw new TypeError('amount must be a number');
     }
 
     if (typeof conversionRate !== 'number') {
-      throw new TypeError('conversionRate must be a string');
+      throw new TypeError('conversionRate must be a number');
     }
 
     return (amount * conversionRate);
