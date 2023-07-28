@@ -22,9 +22,9 @@ export default class HolbertonCourse {
     this._length = value;
   }
 
-  set students(currStudents) {
-    if (typeof currStudents === 'object') {
-      for (const student in currStudents) {
+  set students(value) {
+    if (typeof value === 'object') {
+      for (const student in value) {
         if (typeof student !== 'string') {
           throw new TypeError('Students must be an array of strings');
         }
@@ -32,10 +32,9 @@ export default class HolbertonCourse {
     } else {
       throw new TypeError('Students must be an array of strings');
     }
-    this._students = currStudents;
+    this._students = value;
   }
 
-  
   get name() {
     return this._name;
   }
